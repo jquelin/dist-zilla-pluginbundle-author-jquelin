@@ -199,7 +199,7 @@ L<http://www.listbox.com/subscribe/?list_id=139292>
 
 =item * Git repository
 
-L<http://github.com/jquelin/dist-zilla-pluginbundle-jquelin.git>
+L<http://github.com/jquelin/dist-zilla-pluginbundle-jquelin>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
