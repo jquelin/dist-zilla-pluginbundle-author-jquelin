@@ -2,6 +2,9 @@ Changelog for Dist-Zilla-PluginBundle-JQUELIN
 
 {{$NEXT}}
 
+1.100081  2010-01-08 17:59:21 Europe/Paris
+ - new param skip_prereq to feed autoprereq plugin
+
 1.100080  2010-01-08 11:12:49 Europe/Paris
  - new param weaver to load taskweaver
 
