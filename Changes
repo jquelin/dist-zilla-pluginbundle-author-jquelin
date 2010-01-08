@@ -2,5 +2,8 @@ Changelog for Dist-Zilla-PluginBundle-JQUELIN
 
 {{$NEXT}}
 
+1.100080  2010-01-08 11:12:49 Europe/Paris
+ - new param weaver to load taskweaver
+
 1.100060  2010-01-06 13:11:58 Europe/Paris
  - initial release
