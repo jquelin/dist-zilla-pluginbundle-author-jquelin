@@ -23,6 +23,11 @@ sub bundle_config {
         . sprintf('%01u', ($ENV{N} || 0))
         . ($ENV{DEV} ? (sprintf '_%03u', $ENV{DEV}) : '');
 
+    # params for autoprereq
+    my $prereq_params = defined $arg->{skip_prereq}
+        ? { skip => $arg->{skip_prereq} }
+        : {};
+
     # params for pod weaver
     $arg->{weaver} ||= 'pod';
 
@@ -48,7 +53,7 @@ sub bundle_config {
         [ ManifestSkip => {} ],
 
         # -- get prereqs
-        [ AutoPrereq => {} ],
+        [ AutoPrereq => $prereq_params ],
 
         # -- munge files
         [ ExtraTests  => {} ],
@@ -107,8 +112,10 @@ __END__
 In your F<dist.ini>:
 
     [@JQUELIN]
-    major_version = 1        ; this is the default
-    weaver        = pod      ; default, can also be 'task'
+    major_version = 1          ; this is the default
+    weaver        = pod        ; default, can also be 'task'
+    skip_prereq   = ::Test$    ; no default
+
 
 =head1 DESCRIPTION
 
@@ -165,6 +172,9 @@ L<AutoVersion|Dist::Zilla::Plugin::AutoVersion> plugin. Default to 1.
 =item * C<weaver> - can be either C<pod> (default) or C<task>, to load
 respectively either L<PodWeaver|Dist::Zilla::Plugin::PodWeaver> or
 L<TaskWeaver|Dist::Zilla::Plugin::TaskWeaver>.
+
+=item * C<skip_prereq> - passed as C<skip> option to the
+L<AutoPrereq|Dist::Zilla::Plugin::AutoPrereq> plugin if set. No default.
 
 =back
 
