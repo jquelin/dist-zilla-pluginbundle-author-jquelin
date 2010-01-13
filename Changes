@@ -2,6 +2,10 @@ Changelog for Dist-Zilla-PluginBundle-JQUELIN
 
 {{$NEXT}}
 
+1.100130  2010-01-13 15:14:47 Europe/Paris
+ - adding prereqs on plugins used
+ - prepender plugin now defaults copyright to true
+
 1.100081  2010-01-08 17:59:21 Europe/Paris
  - new param skip_prereq to feed autoprereq plugin
 
