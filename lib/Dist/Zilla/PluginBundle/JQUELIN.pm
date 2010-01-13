@@ -60,7 +60,7 @@ sub bundle_config {
         [ NextRelease => {} ],
         [ PkgVersion  => {} ],
         [ ( $arg->{weaver} eq 'task' ? 'TaskWeaver' : 'PodWeaver' ) => {} ],
-        [ Prepender   => { copyright => 1 } ],
+        [ Prepender   => {} ],
 
         # -- dynamic meta-information
         [ InstallDirs             => {} ],
@@ -144,7 +144,6 @@ equivalent to:
     [PkgVersion]
     [PodWeaver]
     [Prepender]
-    copyright = 1
 
     ; -- dynamic meta-information
     [InstallDirs]
