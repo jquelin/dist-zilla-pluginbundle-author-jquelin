@@ -9,7 +9,7 @@ use Dist::Zilla::Plugin::AllFiles;
 use Dist::Zilla::Plugin::AutoPrereq;
 use Dist::Zilla::Plugin::AutoVersion;
 use Dist::Zilla::Plugin::CheckChangeLog;
-use Dist::Zilla::Plugin::CompileTests;
+use Dist::Zilla::Plugin::CompileTests 1.100220;
 use Dist::Zilla::Plugin::CriticTests;
 use Dist::Zilla::Plugin::ExtraTests;
 use Dist::Zilla::Plugin::InstallDirs;
@@ -52,6 +52,11 @@ sub bundle_config {
         ? { skip => $arg->{skip_prereq} }
         : {};
 
+    # params for compiletests
+    my $compile_params = defined $arg->{fake_home}
+        ? { fake_home => $arg->{fake_home} }
+        : {};
+
     # params for pod weaver
     $arg->{weaver} ||= 'pod';
 
@@ -67,7 +72,7 @@ sub bundle_config {
 
         # -- fetch & generate files
         [ AllFiles     => {} ],
-        [ CompileTests => {} ],
+        [ CompileTests => $compile_params ],
         [ CriticTests  => {} ],
         [ MetaTests    => {} ],
         [ PodTests     => {} ],
@@ -198,6 +203,10 @@ L<TaskWeaver|Dist::Zilla::Plugin::TaskWeaver>.
 
 =item * C<skip_prereq> - passed as C<skip> option to the
 L<AutoPrereq|Dist::Zilla::Plugin::AutoPrereq> plugin if set. No default.
+
+=item * C<fake_home> - passed to
+L<CompileTests|Dist::Zilla::Plugin::CompileTests> to control whether
+to fake home.
 
 =back
 
