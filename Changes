@@ -1,6 +1,7 @@
 Changelog for Dist-Zilla-PluginBundle-JQUELIN
 
 {{$NEXT}}
+ - provide shorter names for included plugins
 
 1.100220  2010-01-22 16:36:06 Europe/Paris
 - new param fake_home for compiletests

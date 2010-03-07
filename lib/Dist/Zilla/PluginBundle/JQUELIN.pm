@@ -5,6 +5,11 @@ use warnings;
 package Dist::Zilla::PluginBundle::JQUELIN;
 # ABSTRACT: build & release a distribution like jquelin
 
+use Class::MOP;
+use Moose;
+use Moose::Autobox;
+
+# plugins used
 use Dist::Zilla::Plugin::AllFiles;
 use Dist::Zilla::Plugin::AutoPrereq;
 use Dist::Zilla::Plugin::AutoVersion;
@@ -30,8 +35,6 @@ use Dist::Zilla::Plugin::Readme;
 use Dist::Zilla::Plugin::TaskWeaver;
 use Dist::Zilla::Plugin::UploadToCPAN;
 use Dist::Zilla::PluginBundle::Git;
-use Moose;
-use Moose::Autobox;
 
 with 'Dist::Zilla::Role::PluginBundle';
 
@@ -109,20 +112,20 @@ sub bundle_config {
     );
 
     # create list of plugins
-    my $prefix = 'Dist::Zilla::Plugin::';
-    my @plugins =
-        map { [ "$class/$prefix$_->[0]" => "$prefix$_->[0]" => $_->[1] ] }
-        @wanted;
+    my @plugins;
+    for my $wanted (@wanted) {
+        my ($name, $arg) = @$wanted;
+        my $class = "Dist::Zilla::Plugin::$name";
+        Class::MOP::load_class($class); # make sure plugin exists
+        push @plugins, [ "$section->{name}/$name" => $class => $arg ];
+    }
 
     # add git plugins
     my @gitplugins = Dist::Zilla::PluginBundle::Git->bundle_config( {
-        name    => "$class/Git",
+        name    => "$section->{name}/Git",
         payload => { },
     } );
     push @plugins, @gitplugins;
-
-    # make sure all plugins exist
-    eval "require $_->[1]" or die for @plugins; ## no critic ProhibitStringyEval
 
     return @plugins;
 }
