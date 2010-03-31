@@ -10,14 +10,14 @@ use Moose;
 use Moose::Autobox;
 
 # plugins used
-use Dist::Zilla::Plugin::AllFiles;
 use Dist::Zilla::Plugin::AutoPrereq;
 use Dist::Zilla::Plugin::AutoVersion;
 use Dist::Zilla::Plugin::CheckChangeLog;
 use Dist::Zilla::Plugin::CompileTests 1.100220;
 use Dist::Zilla::Plugin::CriticTests;
+use Dist::Zilla::Plugin::ExecDir;
 use Dist::Zilla::Plugin::ExtraTests;
-use Dist::Zilla::Plugin::InstallDirs;
+use Dist::Zilla::Plugin::GatherDir;
 use Dist::Zilla::Plugin::License;
 use Dist::Zilla::Plugin::Manifest;
 use Dist::Zilla::Plugin::ManifestSkip;
@@ -27,11 +27,13 @@ use Dist::Zilla::Plugin::MetaTests;
 use Dist::Zilla::Plugin::ModuleBuild;
 use Dist::Zilla::Plugin::NextRelease;
 use Dist::Zilla::Plugin::PkgVersion;
-use Dist::Zilla::Plugin::PodTests;
+use Dist::Zilla::Plugin::PodCoverageTests;
+use Dist::Zilla::Plugin::PodSyntaxTests;
 use Dist::Zilla::Plugin::PodWeaver;
 use Dist::Zilla::Plugin::Prepender 1.100130;
 use Dist::Zilla::Plugin::PruneCruft;
 use Dist::Zilla::Plugin::Readme;
+use Dist::Zilla::Plugin::ShareDir;
 use Dist::Zilla::Plugin::TaskWeaver;
 use Dist::Zilla::Plugin::UploadToCPAN;
 use Dist::Zilla::PluginBundle::Git;
@@ -74,11 +76,12 @@ sub bundle_config {
         ],
 
         # -- fetch & generate files
-        [ AllFiles     => {} ],
-        [ CompileTests => $compile_params ],
-        [ CriticTests  => {} ],
-        [ MetaTests    => {} ],
-        [ PodTests     => {} ],
+        [ GatherDir        => {} ],
+        [ CompileTests     => $compile_params ],
+        [ CriticTests      => {} ],
+        [ MetaTests        => {} ],
+        [ PodCoverageTests => {} ],
+        [ PodSyntaxTests   => {} ],
 
         # -- remove some files
         [ PruneCruft   => {} ],
@@ -95,7 +98,8 @@ sub bundle_config {
         [ Prepender   => {} ],
 
         # -- dynamic meta-information
-        [ InstallDirs             => {} ],
+        [ ExecDir                 => {} ],
+        [ ShareDir                => {} ],
         [ 'MetaProvides::Package' => {} ],
 
         # -- generate meta files
@@ -157,11 +161,12 @@ equivalent to:
     [AutoVersion]
 
     ; -- fetch & generate files
-    [AllFiles]
+    [GatherDir]
     [CompileTests]
     [CriticTests]
     [MetaTests]
-    [PodTests]
+    [PodCoverageTests]
+    [PodSyntaxTests]
 
     ; -- remove some files
     [PruneCruft]
@@ -178,7 +183,8 @@ equivalent to:
     [Prepender]
 
     ; -- dynamic meta-information
-    [InstallDirs]
+    [ExecDir]
+    [ShareDir]
     [MetaProvides::Package]
 
     ; -- generate meta files
