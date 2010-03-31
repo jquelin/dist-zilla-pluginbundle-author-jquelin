@@ -2,6 +2,9 @@ Changelog for Dist-Zilla-PluginBundle-JQUELIN
 
 {{$NEXT}}
 
+1.100900  2010-03-31 10:01:46 Europe/Paris
+ - port to dzil v2
+
 1.100660  2010-03-07 10:41:56 Europe/Paris
  - provide shorter names for included plugins
  - provide dist.ini example
