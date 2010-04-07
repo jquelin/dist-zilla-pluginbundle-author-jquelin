@@ -45,7 +45,6 @@ use Dist::Zilla::Plugin::ReportVersions;
 use Dist::Zilla::Plugin::Repository;
 use Dist::Zilla::Plugin::ShareDir;
 use Dist::Zilla::Plugin::TaskWeaver;
-use Dist::Zilla::Plugin::TestRelease;
 use Dist::Zilla::Plugin::UnusedVarsTests;
 use Dist::Zilla::Plugin::UploadToCPAN;
 use Dist::Zilla::PluginBundle::Git;
@@ -133,7 +132,6 @@ sub bundle_config {
 
         # -- release
         [ CheckChangeLog => {} ],
-        [ TestRelease    => {} ],
         #[ @Git],
         [ UploadToCPAN   => {} ],
     );
