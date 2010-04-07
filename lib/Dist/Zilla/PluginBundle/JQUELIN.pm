@@ -21,6 +21,7 @@ use Dist::Zilla::Plugin::ExtraTests;
 use Dist::Zilla::Plugin::GatherDir;
 use Dist::Zilla::Plugin::HasVersionTests;
 use Dist::Zilla::Plugin::Homepage;
+#use Dist::Zilla::Plugin::InstallGuide;
 use Dist::Zilla::Plugin::License;
 use Dist::Zilla::Plugin::Manifest;
 use Dist::Zilla::Plugin::ManifestSkip;
@@ -122,11 +123,12 @@ sub bundle_config {
         [ MetaConfig              => {} ],
 
         # -- generate meta files
-        [ License     => {} ],
-        [ ModuleBuild => {} ],
-        [ MetaYAML    => {} ],
-        [ Readme      => {} ],
-        [ Manifest    => {} ], # should come last
+        [ License      => {} ],
+        [ MetaYAML     => {} ],
+        [ ModuleBuild  => {} ],
+        #[ InstallGuide => {} ],
+        [ Readme       => {} ],
+        [ Manifest     => {} ], # should come last
 
         # -- release
         [ CheckChangeLog => {} ],
