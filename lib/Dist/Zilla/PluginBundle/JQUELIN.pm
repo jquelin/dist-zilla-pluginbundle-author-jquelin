@@ -12,6 +12,7 @@ use Moose::Autobox;
 # plugins used
 use Dist::Zilla::Plugin::AutoPrereq;
 use Dist::Zilla::Plugin::AutoVersion;
+use Dist::Zilla::Plugin::Bugtracker;
 use Dist::Zilla::Plugin::CheckChangeLog;
 use Dist::Zilla::Plugin::CompileTests 1.100220;
 use Dist::Zilla::Plugin::CriticTests;
@@ -19,9 +20,11 @@ use Dist::Zilla::Plugin::ExecDir;
 use Dist::Zilla::Plugin::ExtraTests;
 use Dist::Zilla::Plugin::GatherDir;
 use Dist::Zilla::Plugin::HasVersionTests;
+use Dist::Zilla::Plugin::Homepage;
 use Dist::Zilla::Plugin::License;
 use Dist::Zilla::Plugin::Manifest;
 use Dist::Zilla::Plugin::ManifestSkip;
+use Dist::Zilla::Plugin::MetaConfig;
 use Dist::Zilla::Plugin::MetaProvides::Package;
 use Dist::Zilla::Plugin::MetaYAML;
 use Dist::Zilla::Plugin::MetaTests;
@@ -37,6 +40,7 @@ use Dist::Zilla::Plugin::Prepender 1.100130;
 use Dist::Zilla::Plugin::PruneCruft;
 use Dist::Zilla::Plugin::Readme;
 use Dist::Zilla::Plugin::ReportVersions;
+use Dist::Zilla::Plugin::Repository;
 use Dist::Zilla::Plugin::ShareDir;
 use Dist::Zilla::Plugin::TaskWeaver;
 use Dist::Zilla::Plugin::TestRelease;
@@ -111,7 +115,11 @@ sub bundle_config {
         # -- dynamic meta-information
         [ ExecDir                 => {} ],
         [ ShareDir                => {} ],
+        [ Bugtracker              => {} ],
+        [ Homepage                => {} ],
+        [ Repository              => {} ],
         [ 'MetaProvides::Package' => {} ],
+        [ MetaConfig              => {} ],
 
         # -- generate meta files
         [ License     => {} ],
