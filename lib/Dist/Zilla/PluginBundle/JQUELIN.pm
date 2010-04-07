@@ -22,6 +22,7 @@ use Dist::Zilla::Plugin::GatherDir;
 use Dist::Zilla::Plugin::HasVersionTests;
 use Dist::Zilla::Plugin::Homepage;
 #use Dist::Zilla::Plugin::InstallGuide;
+use Dist::Zilla::Plugin::KwaliteeTests;
 use Dist::Zilla::Plugin::License;
 use Dist::Zilla::Plugin::Manifest;
 use Dist::Zilla::Plugin::ManifestSkip;
@@ -90,6 +91,7 @@ sub bundle_config {
         [ CompileTests        => $compile_params ],
         [ CriticTests         => {} ],
         [ HasVersionTests     => {} ],
+        [ KwaliteeTests       => {} ],
         [ MetaTests           => {} ],
         [ MinimumVersionTests => {} ],
         [ PodCoverageTests    => {} ],
