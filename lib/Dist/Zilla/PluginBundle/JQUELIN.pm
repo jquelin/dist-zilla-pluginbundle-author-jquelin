@@ -18,6 +18,7 @@ use Dist::Zilla::Plugin::CriticTests;
 use Dist::Zilla::Plugin::ExecDir;
 use Dist::Zilla::Plugin::ExtraTests;
 use Dist::Zilla::Plugin::GatherDir;
+use Dist::Zilla::Plugin::HasVersionTests;
 use Dist::Zilla::Plugin::License;
 use Dist::Zilla::Plugin::Manifest;
 use Dist::Zilla::Plugin::ManifestSkip;
@@ -25,16 +26,21 @@ use Dist::Zilla::Plugin::MetaProvides::Package;
 use Dist::Zilla::Plugin::MetaYAML;
 use Dist::Zilla::Plugin::MetaTests;
 use Dist::Zilla::Plugin::ModuleBuild;
+use Dist::Zilla::Plugin::MinimumVersionTests;
 use Dist::Zilla::Plugin::NextRelease;
 use Dist::Zilla::Plugin::PkgVersion;
 use Dist::Zilla::Plugin::PodCoverageTests;
 use Dist::Zilla::Plugin::PodSyntaxTests;
 use Dist::Zilla::Plugin::PodWeaver;
+use Dist::Zilla::Plugin::PortabilityTests;
 use Dist::Zilla::Plugin::Prepender 1.100130;
 use Dist::Zilla::Plugin::PruneCruft;
 use Dist::Zilla::Plugin::Readme;
+use Dist::Zilla::Plugin::ReportVersions;
 use Dist::Zilla::Plugin::ShareDir;
 use Dist::Zilla::Plugin::TaskWeaver;
+use Dist::Zilla::Plugin::TestRelease;
+use Dist::Zilla::Plugin::UnusedVarsTests;
 use Dist::Zilla::Plugin::UploadToCPAN;
 use Dist::Zilla::PluginBundle::Git;
 
@@ -76,12 +82,17 @@ sub bundle_config {
         ],
 
         # -- fetch & generate files
-        [ GatherDir        => {} ],
-        [ CompileTests     => $compile_params ],
-        [ CriticTests      => {} ],
-        [ MetaTests        => {} ],
-        [ PodCoverageTests => {} ],
-        [ PodSyntaxTests   => {} ],
+        [ GatherDir           => {} ],
+        [ CompileTests        => $compile_params ],
+        [ CriticTests         => {} ],
+        [ HasVersionTests     => {} ],
+        [ MetaTests           => {} ],
+        [ MinimumVersionTests => {} ],
+        [ PodCoverageTests    => {} ],
+        [ PodSyntaxTests      => {} ],
+        [ PortabilityTests    => {} ],
+        [ ReportVersions      => {} ],
+        [ UnusedVarsTests     => {} ],
 
         # -- remove some files
         [ PruneCruft   => {} ],
@@ -111,6 +122,7 @@ sub bundle_config {
 
         # -- release
         [ CheckChangeLog => {} ],
+        [ TestRelease    => {} ],
         #[ @Git],
         [ UploadToCPAN   => {} ],
     );
