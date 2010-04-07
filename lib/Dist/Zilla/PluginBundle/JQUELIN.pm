@@ -185,9 +185,15 @@ equivalent to:
     [GatherDir]
     [CompileTests]
     [CriticTests]
+    [HasVersionTests]
+    [KwaliteeTests]
     [MetaTests]
+    [MinimumVersionTests]
     [PodCoverageTests]
     [PodSyntaxTests]
+    [PortabilityTests]
+    [ReportVersions]
+    [UnusedVarsTests]
 
     ; -- remove some files
     [PruneCruft]
@@ -206,7 +212,11 @@ equivalent to:
     ; -- dynamic meta-information
     [ExecDir]
     [ShareDir]
+    [Bugtracker]
+    [Homepage]
+    [Repository]
     [MetaProvides::Package]
+    [MetaConfig]
 
     ; -- generate meta files
     [License]
