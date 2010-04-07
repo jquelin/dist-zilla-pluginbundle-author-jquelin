@@ -2,6 +2,10 @@ Changelog for Dist-Zilla-PluginBundle-JQUELIN
 
 {{$NEXT}}
 
+1.100972  2010-04-07 16:59:01 Europe/Paris
+ - remove testrelease
+ - pod update
+
 1.100971  2010-04-07 16:51:15 Europe/Paris
  - added kwalitee tests
 
