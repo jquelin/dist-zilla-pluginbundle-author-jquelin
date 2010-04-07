@@ -53,7 +53,6 @@ with 'Dist::Zilla::Role::PluginBundle';
 
 sub bundle_config {
     my ($self, $section) = @_;
-    my $class = ref($self) || $self;
     my $arg   = $section->{payload};
 
     # params for AutoVersion
