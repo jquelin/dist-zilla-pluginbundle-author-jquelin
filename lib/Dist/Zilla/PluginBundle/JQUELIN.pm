@@ -27,6 +27,7 @@ use Dist::Zilla::Plugin::License;
 use Dist::Zilla::Plugin::Manifest;
 use Dist::Zilla::Plugin::ManifestSkip;
 use Dist::Zilla::Plugin::MetaConfig;
+use Dist::Zilla::Plugin::MetaJSON;
 use Dist::Zilla::Plugin::MetaProvides::Package;
 use Dist::Zilla::Plugin::MetaYAML;
 use Dist::Zilla::Plugin::MetaTests;
@@ -125,6 +126,7 @@ sub bundle_config {
         # -- generate meta files
         [ License      => {} ],
         [ MetaYAML     => {} ],
+        [ MetaJSON     => {} ],
         [ ModuleBuild  => {} ],
         #[ InstallGuide => {} ],
         [ Readme       => {} ],
@@ -222,6 +224,7 @@ equivalent to:
     [License]
     [ModuleBuild]
     [MetaYAML]
+    [MetaJSON]
     [Readme]
     [Manifest] ; should come last
 
