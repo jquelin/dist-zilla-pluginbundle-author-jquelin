@@ -2,6 +2,10 @@ Changelog for Dist-Zilla-PluginBundle-JQUELIN
 
 {{$NEXT}}
 
+1.101620  2010-06-11 17:55:23 Europe/Paris
+ - updated to match dzil v4
+ - nextrelease now forced to europe/paris timezone
+
 1.100972  2010-04-07 16:59:01 Europe/Paris
  - remove testrelease
  - pod update
