@@ -33,7 +33,7 @@ use Dist::Zilla::Plugin::MetaYAML;
 use Dist::Zilla::Plugin::MetaTests;
 use Dist::Zilla::Plugin::ModuleBuild;
 use Dist::Zilla::Plugin::MinimumVersionTests;
-use Dist::Zilla::Plugin::NextRelease;
+use Dist::Zilla::Plugin::NextRelease 2.101230;  # time_zone param
 use Dist::Zilla::Plugin::PkgVersion;
 use Dist::Zilla::Plugin::PodCoverageTests;
 use Dist::Zilla::Plugin::PodSyntaxTests;
@@ -109,7 +109,7 @@ sub bundle_config {
 
         # -- munge files
         [ ExtraTests  => {} ],
-        [ NextRelease => {} ],
+        [ NextRelease => { time_zone => 'Europe/Paris' } ],
         [ PkgVersion  => {} ],
         [ ( $arg->{weaver} eq 'task' ? 'TaskWeaver' : 'PodWeaver' ) => {} ],
         [ Prepender   => {} ],
