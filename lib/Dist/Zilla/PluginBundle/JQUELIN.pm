@@ -41,6 +41,7 @@ use Dist::Zilla::Plugin::PodWeaver;
 use Dist::Zilla::Plugin::PortabilityTests;
 use Dist::Zilla::Plugin::Prepender 1.100130;
 use Dist::Zilla::Plugin::PruneCruft;
+use Dist::Zilla::Plugin::PruneFiles;
 use Dist::Zilla::Plugin::Readme;
 use Dist::Zilla::Plugin::ReportVersions;
 use Dist::Zilla::Plugin::Repository;
@@ -102,6 +103,7 @@ sub bundle_config {
 
         # -- remove some files
         [ PruneCruft   => {} ],
+        [ PruneFiles   => { match => '~$' } ],
         [ ManifestSkip => {} ],
 
         # -- get prereqs
