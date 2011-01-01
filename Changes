@@ -5,7 +5,8 @@ Changelog for Dist-Zilla-PluginBundle-JQUELIN
  - using ReportVersions::Tiny for smaller footprint / better output
  - using AutoPrereqs instead of AutoPrereq (to be deprecated)
  - removed CriticTests that fail quite too often
- - remove UnusedVarsTests that is not that useful
+ - removed UnusedVarsTests that is not that useful
+ - removed MetaTests that is not that useful (dzil generates correct meta)
 
 1.101620  2010-06-11 17:55:23 Europe/Paris
  - updated to match dzil v4

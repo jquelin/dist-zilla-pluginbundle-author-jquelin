@@ -30,7 +30,7 @@ use Dist::Zilla::Plugin::MetaConfig;
 use Dist::Zilla::Plugin::MetaJSON;
 use Dist::Zilla::Plugin::MetaProvides::Package;
 use Dist::Zilla::Plugin::MetaYAML;
-use Dist::Zilla::Plugin::MetaTests;
+#use Dist::Zilla::Plugin::MetaTests;
 use Dist::Zilla::Plugin::ModuleBuild;
 use Dist::Zilla::Plugin::MinimumVersionTests;
 use Dist::Zilla::Plugin::NextRelease 2.101230;  # time_zone param
@@ -93,7 +93,7 @@ sub bundle_config {
         #[ CriticTests            => {} ],
         [ HasVersionTests        => {} ],
         [ KwaliteeTests          => {} ],
-        [ MetaTests              => {} ],
+        #[ MetaTests              => {} ],
         [ MinimumVersionTests    => {} ],
         [ PodCoverageTests       => {} ],
         [ PodSyntaxTests         => {} ],
@@ -190,7 +190,6 @@ equivalent to:
     [CompileTests]
     [HasVersionTests]
     [KwaliteeTests]
-    [MetaTests]
     [MinimumVersionTests]
     [PodCoverageTests]
     [PodSyntaxTests]
