@@ -196,15 +196,17 @@ equivalent to:
     [PodCoverageTests]
     [PodSyntaxTests]
     [PortabilityTests]
-    [ReportVersions]
+    [ReportVersions::Tiny]
     [UnusedVarsTests]
 
     ; -- remove some files
     [PruneCruft]
+    [PruneFiles]
+    match = ~$
     [ManifestSkip]
 
     ; -- get prereqs
-    [AutoPrereq]
+    [AutoPrereqs]
 
     ; -- munge files
     [ExtraTests]
