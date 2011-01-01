@@ -15,7 +15,7 @@ use Dist::Zilla::Plugin::AutoVersion;
 use Dist::Zilla::Plugin::Bugtracker;
 use Dist::Zilla::Plugin::CheckChangeLog;
 use Dist::Zilla::Plugin::CompileTests 1.100220;
-use Dist::Zilla::Plugin::CriticTests;
+#use Dist::Zilla::Plugin::CriticTests;
 use Dist::Zilla::Plugin::ExecDir;
 use Dist::Zilla::Plugin::ExtraTests;
 use Dist::Zilla::Plugin::GatherDir;
@@ -90,7 +90,7 @@ sub bundle_config {
         # -- fetch & generate files
         [ GatherDir              => {} ],
         [ CompileTests           => $compile_params ],
-        [ CriticTests            => {} ],
+        #[ CriticTests            => {} ],
         [ HasVersionTests        => {} ],
         [ KwaliteeTests          => {} ],
         [ MetaTests              => {} ],
@@ -188,7 +188,6 @@ equivalent to:
     ; -- fetch & generate files
     [GatherDir]
     [CompileTests]
-    [CriticTests]
     [HasVersionTests]
     [KwaliteeTests]
     [MetaTests]
