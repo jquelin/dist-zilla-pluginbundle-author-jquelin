@@ -47,7 +47,7 @@ use Dist::Zilla::Plugin::ReportVersions::Tiny;
 use Dist::Zilla::Plugin::Repository;
 use Dist::Zilla::Plugin::ShareDir;
 use Dist::Zilla::Plugin::TaskWeaver;
-use Dist::Zilla::Plugin::UnusedVarsTests;
+#use Dist::Zilla::Plugin::UnusedVarsTests;
 use Dist::Zilla::Plugin::UploadToCPAN;
 use Dist::Zilla::PluginBundle::Git;
 
@@ -99,7 +99,7 @@ sub bundle_config {
         [ PodSyntaxTests         => {} ],
         [ PortabilityTests       => {} ],
         [ 'ReportVersions::Tiny' => {} ],
-        [ UnusedVarsTests        => {} ],
+        #[ UnusedVarsTests        => {} ],
 
         # -- remove some files
         [ PruneCruft   => {} ],
@@ -196,7 +196,6 @@ equivalent to:
     [PodSyntaxTests]
     [PortabilityTests]
     [ReportVersions::Tiny]
-    [UnusedVarsTests]
 
     ; -- remove some files
     [PruneCruft]
