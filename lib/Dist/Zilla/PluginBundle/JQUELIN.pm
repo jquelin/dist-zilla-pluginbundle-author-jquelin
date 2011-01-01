@@ -43,7 +43,7 @@ use Dist::Zilla::Plugin::Prepender 1.100130;
 use Dist::Zilla::Plugin::PruneCruft;
 use Dist::Zilla::Plugin::PruneFiles;
 use Dist::Zilla::Plugin::Readme;
-use Dist::Zilla::Plugin::ReportVersions;
+use Dist::Zilla::Plugin::ReportVersions::Tiny;
 use Dist::Zilla::Plugin::Repository;
 use Dist::Zilla::Plugin::ShareDir;
 use Dist::Zilla::Plugin::TaskWeaver;
@@ -98,7 +98,7 @@ sub bundle_config {
         [ PodCoverageTests    => {} ],
         [ PodSyntaxTests      => {} ],
         [ PortabilityTests    => {} ],
-        [ ReportVersions      => {} ],
+        [ 'ReportVersions::Tiny' => {} ],
         [ UnusedVarsTests     => {} ],
 
         # -- remove some files

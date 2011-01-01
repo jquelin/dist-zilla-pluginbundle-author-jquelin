@@ -2,6 +2,7 @@ Changelog for Dist-Zilla-PluginBundle-JQUELIN
 
 {{$NEXT}}
  - added PruneFiles to remove vim/emacs backup files
+ - using ReportVersions::Tiny for smaller footprint / better output
 
 1.101620  2010-06-11 17:55:23 Europe/Paris
  - updated to match dzil v4
