@@ -1,6 +1,8 @@
 Changelog for Dist-Zilla-PluginBundle-JQUELIN
 
 {{$NEXT}}
+
+1.110010  2011-01-01 14:42:27 Europe/Paris
  - added PruneFiles to remove vim/emacs backup files
  - using ReportVersions::Tiny for smaller footprint / better output
  - using AutoPrereqs instead of AutoPrereq (to be deprecated)
