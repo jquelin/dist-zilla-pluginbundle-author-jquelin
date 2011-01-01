@@ -10,7 +10,7 @@ use Moose;
 use Moose::Autobox;
 
 # plugins used
-use Dist::Zilla::Plugin::AutoPrereq;
+use Dist::Zilla::Plugin::AutoPrereqs;
 use Dist::Zilla::Plugin::AutoVersion;
 use Dist::Zilla::Plugin::Bugtracker;
 use Dist::Zilla::Plugin::CheckChangeLog;
@@ -107,7 +107,7 @@ sub bundle_config {
         [ ManifestSkip => {} ],
 
         # -- get prereqs
-        [ AutoPrereq => $prereq_params ],
+        [ AutoPrereqs => $prereq_params ],
 
         # -- munge files
         [ ExtraTests  => {} ],
