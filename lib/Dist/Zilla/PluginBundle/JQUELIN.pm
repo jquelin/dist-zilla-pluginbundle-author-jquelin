@@ -38,7 +38,7 @@ use Dist::Zilla::Plugin::PkgVersion;
 use Dist::Zilla::Plugin::PodCoverageTests;
 use Dist::Zilla::Plugin::PodSyntaxTests;
 use Dist::Zilla::Plugin::PodWeaver;
-use Dist::Zilla::Plugin::PortabilityTests;
+#use Dist::Zilla::Plugin::PortabilityTests;
 use Dist::Zilla::Plugin::Prepender 1.100130;
 use Dist::Zilla::Plugin::PruneCruft;
 use Dist::Zilla::Plugin::PruneFiles;
@@ -97,7 +97,7 @@ sub bundle_config {
         [ MinimumVersionTests    => {} ],
         [ PodCoverageTests       => {} ],
         [ PodSyntaxTests         => {} ],
-        [ PortabilityTests       => {} ],
+        #[ PortabilityTests       => {} ],
         [ 'ReportVersions::Tiny' => {} ],
         #[ UnusedVarsTests        => {} ],
 
@@ -193,7 +193,6 @@ equivalent to:
     [MinimumVersionTests]
     [PodCoverageTests]
     [PodSyntaxTests]
-    [PortabilityTests]
     [ReportVersions::Tiny]
 
     ; -- remove some files
