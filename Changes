@@ -2,6 +2,9 @@ Changelog for Dist-Zilla-PluginBundle-JQUELIN
 
 {{$NEXT}}
 
+1.110730  2011-03-14 11:13:14 Europe/Paris
+ - using Git::CommitBuild for releases
+
 1.110700  2011-03-11 16:03:58 Europe/Paris
  - removed PortabilityTests
 
