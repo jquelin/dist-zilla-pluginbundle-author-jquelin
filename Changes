@@ -2,6 +2,9 @@ Changelog for Dist-Zilla-PluginBundle-JQUELIN
 
 {{$NEXT}}
 
+1.111710  2011-06-20 15:37:36 Europe/Paris
+ - new skip_compile parameter
+
 1.110730  2011-03-14 11:13:14 Europe/Paris
  - using Git::CommitBuild for releases
 
