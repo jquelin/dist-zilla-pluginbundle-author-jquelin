@@ -70,9 +70,11 @@ sub bundle_config {
         : {};
 
     # params for compiletests
-    my $compile_params = defined $arg->{fake_home}
-        ? { fake_home => $arg->{fake_home} }
-        : {};
+    my $compile_params = {};
+    $compile_params->{fake_home} = $arg->{fake_home}
+        if defined $arg->{fake_home};
+    $compile_params->{skip} = $arg->{skip_compile}
+        if defined $arg->{skip_compile};
 
     # params for pod weaver
     $arg->{weaver} ||= 'pod';
@@ -190,6 +192,7 @@ In your F<dist.ini>:
     major_version = 1          ; this is the default
     weaver        = pod        ; default, can also be 'task'
     skip_prereq   = ::Test$    ; no default
+    skip_compile  = bin/       ; no default
 
 
 =head1 DESCRIPTION
@@ -269,6 +272,10 @@ L<TaskWeaver|Dist::Zilla::Plugin::TaskWeaver>.
 
 =item * C<skip_prereq> - passed as C<skip> option to the
 L<AutoPrereq|Dist::Zilla::Plugin::AutoPrereq> plugin if set. No default.
+
+=item * C<skip_compile> - passed as C<skip> option to the
+L<CompileTests|Dist::Zilla::Plugin::CompileTests> plugin if set. No
+default.
 
 =item * C<fake_home> - passed to
 L<CompileTests|Dist::Zilla::Plugin::CompileTests> to control whether
