@@ -52,6 +52,7 @@ use Dist::Zilla::Plugin::UploadToCPAN;
 use Dist::Zilla::PluginBundle::Git;
 
 with 'Dist::Zilla::Role::PluginBundle';
+with 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
 
 sub bundle_config {
     my ($self, $section) = @_;
@@ -282,6 +283,16 @@ L<CompileTests|Dist::Zilla::Plugin::CompileTests> to control whether
 to fake home.
 
 =back
+
+B<NOTE:> This bundle consumes
+L<Dist::Zilla::Role::PluginBundle::Config::Slicer> so you can also
+specify attributes for any of the bundled plugins. The option should be
+the plugin name and the attribute separated by a dot:
+
+    [@JQUELIN]
+    AutoPrereqs.skip = Bad::Module
+
+See L<Config::MVP::Slicer/CONFIGURATION SYNTAX> for more information.
 
 
 =head1 SEE ALSO
