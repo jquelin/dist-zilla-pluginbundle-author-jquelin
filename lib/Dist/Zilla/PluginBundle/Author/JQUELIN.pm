@@ -14,7 +14,7 @@ use Dist::Zilla::Plugin::AutoPrereqs;
 use Dist::Zilla::Plugin::AutoVersion;
 use Dist::Zilla::Plugin::Bugtracker;
 use Dist::Zilla::Plugin::CheckChangeLog;
-use Dist::Zilla::Plugin::CompileTests 1.100220;
+use Dist::Zilla::Plugin::Test::Compile 1.100220;
 #use Dist::Zilla::Plugin::CriticTests;
 use Dist::Zilla::Plugin::ExecDir;
 use Dist::Zilla::Plugin::ExtraTests;
@@ -22,7 +22,7 @@ use Dist::Zilla::Plugin::GatherDir;
 use Dist::Zilla::Plugin::HasVersionTests;
 use Dist::Zilla::Plugin::Homepage;
 #use Dist::Zilla::Plugin::InstallGuide;
-use Dist::Zilla::Plugin::KwaliteeTests;
+use Dist::Zilla::Plugin::Test::Kwalitee;
 use Dist::Zilla::Plugin::License;
 use Dist::Zilla::Plugin::Manifest;
 use Dist::Zilla::Plugin::ManifestSkip;
@@ -32,7 +32,7 @@ use Dist::Zilla::Plugin::MetaProvides::Package;
 use Dist::Zilla::Plugin::MetaYAML;
 #use Dist::Zilla::Plugin::MetaTests;
 use Dist::Zilla::Plugin::ModuleBuild;
-use Dist::Zilla::Plugin::MinimumVersionTests;
+use Dist::Zilla::Plugin::Test::MinimumVersion;
 use Dist::Zilla::Plugin::NextRelease 2.101230;  # time_zone param
 use Dist::Zilla::Plugin::PkgVersion;
 use Dist::Zilla::Plugin::PodCoverageTests;
@@ -94,12 +94,12 @@ sub bundle_config {
 
         # -- fetch & generate files
         [ GatherDir              => {} ],
-        [ CompileTests           => $compile_params ],
+        [ 'Test::Compile'        => $compile_params ],
         #[ CriticTests            => {} ],
         [ HasVersionTests        => {} ],
-        [ KwaliteeTests          => {} ],
+        [ 'Test::Kwalitee'       => {} ],
         #[ MetaTests              => {} ],
-        [ MinimumVersionTests    => {} ],
+        [ 'Test::MinimumVersion' => {} ],
         [ PodCoverageTests       => {} ],
         [ PodSyntaxTests         => {} ],
         #[ PortabilityTests       => {} ],
