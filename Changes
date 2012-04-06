@@ -1,10 +1,14 @@
 Changelog for Dist-Zilla-PluginBundle-JQUELIN
 
 {{$NEXT}}
- - migrated to Dist::Zilla::PluginBundle::Author::JQUELIN
+
+2.120970  2012-04-06 11:51:47 Europe/Paris
+ - renamed to Dist::Zilla::PluginBundle::Author::JQUELIN
  - plugin options now passed as Plugin.option (only one pluginbundle
    variable available: weaver)
  - update renamed test plugins to their new names
+
+**
 
 1.111710  2011-06-20 15:37:36 Europe/Paris
  - new skip_compile parameter
