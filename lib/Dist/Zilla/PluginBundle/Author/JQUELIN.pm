@@ -130,7 +130,6 @@ sub bundle_config {
             } ],
         [ "Git::Push"    => {} ],
 
-        #[ @Git],
         [ UploadToCPAN   => {} ],
     );
 
@@ -166,72 +165,12 @@ __END__
 In your F<dist.ini>:
 
     [@Author::JQUELIN]
-    AutoVersion.major = 2
 
 
 =head1 DESCRIPTION
 
-This is a plugin bundle to load all plugins that I am using. It is
-equivalent to:
-
-    [AutoVersion]
-
-    ; -- fetch & generate files
-    [GatherDir]
-    [CompileTests]
-    [HasVersionTests]
-    [KwaliteeTests]
-    [MinimumVersionTests]
-    [PodCoverageTests]
-    [PodSyntaxTests]
-    [ReportVersions::Tiny]
-
-    ; -- remove some files
-    [PruneCruft]
-    [PruneFiles]
-    match = ~$
-    [ManifestSkip]
-
-    ; -- get prereqs
-    [AutoPrereqs]
-
-    ; -- munge files
-    [ExtraTests]
-    [NextRelease]
-    [PkgVersion]
-    [PodWeaver]
-    [Prepender]
-
-    ; -- dynamic meta-information
-    [ExecDir]
-    [ShareDir]
-    [Bugtracker]
-    [Homepage]
-    [Repository]
-    [MetaProvides::Package]
-    [MetaConfig]
-
-    ; -- generate meta files
-    [License]
-    [ModuleBuild]
-    [MetaYAML]
-    [MetaJSON]
-    [Readme]
-    [Manifest] ; should come last
-
-    ; -- release
-    [CheckChangeLog]
-    [Git::Check],
-    [Git::Commit],
-    [Git::CommitBuild]
-    branch =
-    release_branch = releases
-    [Git::Tag / TagMaster]
-    [Git::Tag / TagRelease]
-    tag_format = cpan-v%v
-    branch     = releases
-    [Git::Push],
-    [UploadToCPAN]
+This is a plugin bundle to load all plugins that I am using. Check the
+code to see exactly what are those plugins.
 
 The following options are accepted:
 
