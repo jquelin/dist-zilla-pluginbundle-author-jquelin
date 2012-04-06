@@ -2,8 +2,8 @@ use 5.008;
 use strict;
 use warnings;
 
-package Dist::Zilla::PluginBundle::JQUELIN;
-# ABSTRACT: build & release a distribution like jquelin
+package Dist::Zilla::PluginBundle::Author::JQUELIN;
+# ABSTRACT: Build & release a distribution like jquelin
 
 use Class::MOP;
 use Moose;
@@ -189,11 +189,8 @@ __END__
 
 In your F<dist.ini>:
 
-    [@JQUELIN]
-    major_version = 1          ; this is the default
-    weaver        = pod        ; default, can also be 'task'
-    skip_prereq   = ::Test$    ; no default
-    skip_compile  = bin/       ; no default
+    [@Author::JQUELIN]
+    AutoVersion.major = 2
 
 
 =head1 DESCRIPTION
@@ -303,11 +300,11 @@ You can look for information on this module at:
 
 =item * Search CPAN
 
-L<http://search.cpan.org/dist/Dist-Zilla-PluginBundle-JQUELIN>
+L<http://search.cpan.org/dist/Dist-Zilla-PluginBundle-Author-JQUELIN>
 
 =item * See open / report bugs
 
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dist-Zilla-PluginBundle-JQUELIN>
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dist-Zilla-PluginBundle-Author-JQUELIN>
 
 =item * Mailing-list (same as dist-zilla)
 
@@ -315,15 +312,15 @@ L<http://www.listbox.com/subscribe/?list_id=139292>
 
 =item * Git repository
 
-L<http://github.com/jquelin/dist-zilla-pluginbundle-jquelin>
+L<http://github.com/jquelin/dist-zilla-pluginbundle-author-jquelin>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
-L<http://annocpan.org/dist/Dist-Zilla-PluginBundle-JQUELIN>
+L<http://annocpan.org/dist/Dist-Zilla-PluginBundle-Author-JQUELIN>
 
 =item * CPAN Ratings
 
-L<http://cpanratings.perl.org/d/Dist-Zilla-PluginBundle-JQUELIN>
+L<http://cpanratings.perl.org/d/Dist-Zilla-PluginBundle-Author-JQUELIN>
 
 =back
 
