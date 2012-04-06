@@ -58,13 +58,6 @@ sub bundle_config {
     my ($self, $section) = @_;
     my $arg   = $section->{payload};
 
-    # params for AutoVersion
-    my $major_version  = defined $arg->{major_version} ? $arg->{major_version} : 1;
-    my $version_format =
-          q<{{ $major }}.{{ cldr('yyDDD') }}>
-        . sprintf('%01u', ($ENV{N} || 0))
-        . ($ENV{DEV} ? (sprintf '_%03u', $ENV{DEV}) : '');
-
     # params for autoprereq
     my $prereq_params = defined $arg->{skip_prereq}
         ? { skip => $arg->{skip_prereq} }
@@ -85,12 +78,7 @@ sub bundle_config {
     # long list of plugins
     my @wanted = (
         # -- static meta-information
-        [   AutoVersion => {
-                major     => $major_version,
-                format    => $version_format,
-                time_zone => 'Europe/Paris',
-            }
-        ],
+        [ AutoVersion => { time_zone => 'Europe/Paris' } ],
 
         # -- fetch & generate files
         [ GatherDir              => {} ],
@@ -260,9 +248,6 @@ equivalent to:
 The following options are accepted:
 
 =over 4
-
-=item * C<major_version> - passed as C<major> option to the
-L<AutoVersion|Dist::Zilla::Plugin::AutoVersion> plugin. Default to 1.
 
 =item * C<weaver> - can be either C<pod> (default) or C<task>, to load
 respectively either L<PodWeaver|Dist::Zilla::Plugin::PodWeaver> or
