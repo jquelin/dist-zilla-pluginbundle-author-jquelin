@@ -58,13 +58,6 @@ sub bundle_config {
     my ($self, $section) = @_;
     my $arg   = $section->{payload};
 
-    # params for compiletests
-    my $compile_params = {};
-    $compile_params->{fake_home} = $arg->{fake_home}
-        if defined $arg->{fake_home};
-    $compile_params->{skip} = $arg->{skip_compile}
-        if defined $arg->{skip_compile};
-
     # params for pod weaver
     $arg->{weaver} ||= 'pod';
 
@@ -77,7 +70,7 @@ sub bundle_config {
 
         # -- fetch & generate files
         [ GatherDir              => {} ],
-        [ 'Test::Compile'        => $compile_params ],
+        [ 'Test::Compile'        => {} ],
         #[ CriticTests            => {} ],
         [ HasVersionTests        => {} ],
         [ 'Test::Kwalitee'       => {} ],
@@ -247,14 +240,6 @@ The following options are accepted:
 =item * C<weaver> - can be either C<pod> (default) or C<task>, to load
 respectively either L<PodWeaver|Dist::Zilla::Plugin::PodWeaver> or
 L<TaskWeaver|Dist::Zilla::Plugin::TaskWeaver>.
-
-=item * C<skip_compile> - passed as C<skip> option to the
-L<CompileTests|Dist::Zilla::Plugin::CompileTests> plugin if set. No
-default.
-
-=item * C<fake_home> - passed to
-L<CompileTests|Dist::Zilla::Plugin::CompileTests> to control whether
-to fake home.
 
 =back
 
