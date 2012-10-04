@@ -1,6 +1,12 @@
 Changelog for Dist-Zilla-PluginBundle-JQUELIN
 
 {{$NEXT}}
+ - using Git::NextVersion instead of AutoVersion
+ - removed the "releases" branch
+ - added: Covenant, HelpWanted, ReadmeMarkdownFromPod, TestRelease
+ - removed: HasVersionTests, Test::Kwalitee, Test::MinimumVersion
+
+**
 
 2.120971  2012-04-06 12:01:02 Europe/Paris
  - example updated
