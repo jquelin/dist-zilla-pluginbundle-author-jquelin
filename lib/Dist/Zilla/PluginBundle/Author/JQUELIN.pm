@@ -99,20 +99,20 @@ sub bundle_config {
         [ MetaConfig              => {} ],
 
         # -- generate meta files
-        [ HelpWanted            => {} ],
-        [ License               => {} ],
-        [ Covenant              => {} ],
-        [ MetaYAML              => {} ],
-        [ MetaJSON              => {} ],
-        [ ModuleBuild           => {} ],
-        [ Readme                => {} ],
-        [ ReadmeMarkdownFromPod => {} ],
-        [ Manifest              => {} ], # should come last
+        [ HelpWanted       => {} ],
+        [ License          => {} ],
+        [ Covenant         => {} ],
+        [ MetaYAML         => {} ],
+        [ MetaJSON         => {} ],
+        [ ModuleBuild      => {} ],
+        [ Readme           => {} ],
+        [ ReadmeAnyFromPod => { location => "root", type => "markdown" } ],
+        [ Manifest         => {} ], # should come last
 
         # -- release
         [ CheckChangeLog => {} ],
         [ TestRelease    => {} ],
-        [ "Git::Check"   => {} ],
+        [ "Git::Check"   => { allow_dirty => "README.mkdn" } ],
         [ "Git::Commit"  => {} ],
         [ "Git::Tag"     => {} ],
         [ "Git::Push"    => {} ],

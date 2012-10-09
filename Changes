@@ -1,6 +1,7 @@
 Changelog for Dist-Zilla-PluginBundle-JQUELIN
 
 {{$NEXT}}
+ - readme.mkdn should be created in root dir
 
 3.000     2012-10-04 15:01:33 Europe/Paris
  - using Git::NextVersion instead of AutoVersion
