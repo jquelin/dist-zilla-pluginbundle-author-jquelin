@@ -1,6 +1,7 @@
 Changelog for Dist-Zilla-PluginBundle-JQUELIN
 
 {{$NEXT}}
+ - readme.mkdn should be committed in git
 
 3.001     2012-10-09 10:52:38 Europe/Paris
  - readme.mkdn should be created in root dir

@@ -60,7 +60,8 @@ sub bundle_config {
     # params for pod weaver
     $arg->{weaver} ||= 'pod';
 
-    my $release_branch = 'releases';
+    my @dirty = ( "Changes", "dist.ini", "README.mkdn" );
+    my @allow_dirty = ( allow_dirty => \@dirty );
 
     # long list of plugins
     my @wanted = (
@@ -112,8 +113,8 @@ sub bundle_config {
         # -- release
         [ CheckChangeLog => {} ],
         [ TestRelease    => {} ],
-        [ "Git::Check"   => { allow_dirty => "README.mkdn" } ],
-        [ "Git::Commit"  => {} ],
+        [ "Git::Check"   => { @allow_dirty } ],
+        [ "Git::Commit"  => { @allow_dirty } ],
         [ "Git::Tag"     => {} ],
         [ "Git::Push"    => {} ],
 
