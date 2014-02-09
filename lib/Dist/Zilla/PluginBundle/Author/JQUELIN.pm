@@ -5,50 +5,8 @@ use warnings;
 package Dist::Zilla::PluginBundle::Author::JQUELIN;
 # ABSTRACT: Build & release a distribution like jquelin
 
-use Class::MOP;
 use Moose;
 use Moose::Autobox;
-
-# plugins used
-use Dist::Zilla::Plugin::AutoPrereqs;
-use Dist::Zilla::Plugin::Bugtracker;
-use Dist::Zilla::Plugin::CheckChangeLog;
-use Dist::Zilla::Plugin::Covenant;
-use Dist::Zilla::Plugin::ExecDir;
-use Dist::Zilla::Plugin::ExtraTests;
-use Dist::Zilla::Plugin::GatherDir;
-use Dist::Zilla::Plugin::Git::Check;
-use Dist::Zilla::Plugin::Git::Commit;
-use Dist::Zilla::Plugin::Git::NextVersion;
-use Dist::Zilla::Plugin::Git::Tag;
-use Dist::Zilla::Plugin::Git::Push;
-use Dist::Zilla::Plugin::HelpWanted;
-use Dist::Zilla::Plugin::Homepage;
-use Dist::Zilla::Plugin::License;
-use Dist::Zilla::Plugin::Manifest;
-use Dist::Zilla::Plugin::ManifestSkip;
-use Dist::Zilla::Plugin::MetaConfig;
-use Dist::Zilla::Plugin::MetaJSON;
-use Dist::Zilla::Plugin::MetaProvides::Package;
-use Dist::Zilla::Plugin::MetaYAML;
-use Dist::Zilla::Plugin::ModuleBuild;
-use Dist::Zilla::Plugin::NextRelease 2.101230;  # time_zone param
-use Dist::Zilla::Plugin::PkgVersion;
-use Dist::Zilla::Plugin::PodCoverageTests;
-use Dist::Zilla::Plugin::PodSyntaxTests;
-use Dist::Zilla::Plugin::PodWeaver;
-use Dist::Zilla::Plugin::Prepender 1.100130;
-use Dist::Zilla::Plugin::PruneCruft;
-use Dist::Zilla::Plugin::PruneFiles;
-use Dist::Zilla::Plugin::Readme;
-use Dist::Zilla::Plugin::ReadmeMarkdownFromPod;
-use Dist::Zilla::Plugin::ReportVersions::Tiny;
-use Dist::Zilla::Plugin::Repository;
-use Dist::Zilla::Plugin::ShareDir;
-use Dist::Zilla::Plugin::TaskWeaver;
-use Dist::Zilla::Plugin::Test::Compile 1.100220;
-use Dist::Zilla::Plugin::TestRelease;
-use Dist::Zilla::Plugin::UploadToCPAN;
 
 with 'Dist::Zilla::Role::PluginBundle';
 with 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
@@ -70,7 +28,9 @@ sub bundle_config {
 
         # -- fetch & generate files
         [ GatherDir              => {} ],
-        [ 'Test::Compile'        => {} ],
+        [ 'Test::Compile'        => {
+            ':version' => 1.100220
+        } ],
         [ PodCoverageTests       => {} ],
         [ PodSyntaxTests         => {} ],
         [ 'ReportVersions::Tiny' => {} ],
@@ -85,10 +45,15 @@ sub bundle_config {
 
         # -- munge files
         [ ExtraTests  => {} ],
-        [ NextRelease => { time_zone => 'Europe/Paris' } ],
+        [ NextRelease => {
+            ':version'=> 2.101230,
+            time_zone => 'Europe/Paris',
+        } ],
         [ PkgVersion  => {} ],
         [ ( $arg->{weaver} eq 'task' ? 'TaskWeaver' : 'PodWeaver' ) => {} ],
-        [ Prepender   => {} ],
+        [ Prepender   => {
+            ':version' => 1.100130
+        } ],
 
         # -- dynamic meta-information
         [ ExecDir                 => {} ],
@@ -132,7 +97,6 @@ sub bundle_config {
             ($plugin, $name, $arg) = @$wanted;
         }
         my $class = "Dist::Zilla::Plugin::$plugin";
-        Class::MOP::load_class($class); # make sure plugin exists
         push @plugins, [ "$section->{name}/$name" => $class => $arg ];
     }
 
