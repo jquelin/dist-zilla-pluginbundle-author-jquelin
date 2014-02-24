@@ -1,6 +1,8 @@
 Changelog for Dist-Zilla-PluginBundle-JQUELIN
 
 {{$NEXT}}
+
+3.003     2014-02-24 15:25:25+01:00 Europe/Paris
  - no need to try to load plugin
  - doc: refer to metacpan
 

@@ -4,7 +4,7 @@ Dist::Zilla::PluginBundle::Author::JQUELIN - Build & release a distribution like
 
 # VERSION
 
-version 3.002
+version 3.003
 
 # SYNOPSIS
 
@@ -20,48 +20,48 @@ code to see exactly what are those plugins.
 The following options are accepted:
 
 - `weaver` - can be either `pod` (default) or `task`, to load
-respectively either [PodWeaver](http://search.cpan.org/perldoc?Dist::Zilla::Plugin::PodWeaver) or
-[TaskWeaver](http://search.cpan.org/perldoc?Dist::Zilla::Plugin::TaskWeaver).
+respectively either [PodWeaver](https://metacpan.org/pod/Dist::Zilla::Plugin::PodWeaver) or
+[TaskWeaver](https://metacpan.org/pod/Dist::Zilla::Plugin::TaskWeaver).
 
 __NOTE:__ This bundle consumes
-[Dist::Zilla::Role::PluginBundle::Config::Slicer](http://search.cpan.org/perldoc?Dist::Zilla::Role::PluginBundle::Config::Slicer) so you can also
+[Dist::Zilla::Role::PluginBundle::Config::Slicer](https://metacpan.org/pod/Dist::Zilla::Role::PluginBundle::Config::Slicer) so you can also
 specify attributes for any of the bundled plugins. The option should be
 the plugin name and the attribute separated by a dot:
 
     [@JQUELIN]
     AutoPrereqs.skip = Bad::Module
 
-See ["CONFIGURATION SYNTAX" in Config::MVP::Slicer](http://search.cpan.org/perldoc?Config::MVP::Slicer#CONFIGURATION SYNTAX) for more information.
+See ["CONFIGURATION SYNTAX" in Config::MVP::Slicer](https://metacpan.org/pod/Config::MVP::Slicer#CONFIGURATION-SYNTAX) for more information.
 
 # SEE ALSO
 
 You can look for information on this module at:
 
-- Search CPAN
+- CPAN
 
-[http://search.cpan.org/dist/Dist-Zilla-PluginBundle-Author-JQUELIN](http://search.cpan.org/dist/Dist-Zilla-PluginBundle-Author-JQUELIN)
+    [http://metacpan.org/release/Dist-Zilla-PluginBundle-Author-JQUELIN](http://metacpan.org/release/Dist-Zilla-PluginBundle-Author-JQUELIN)
 
 - See open / report bugs
 
-[http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dist-Zilla-PluginBundle-Author-JQUELIN](http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dist-Zilla-PluginBundle-Author-JQUELIN)
+    [http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dist-Zilla-PluginBundle-Author-JQUELIN](http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dist-Zilla-PluginBundle-Author-JQUELIN)
 
 - Mailing-list (same as dist-zilla)
 
-[http://www.listbox.com/subscribe/?list\_id=139292](http://www.listbox.com/subscribe/?list\_id=139292)
+    [http://www.listbox.com/subscribe/?list\_id=139292](http://www.listbox.com/subscribe/?list_id=139292)
 
 - Git repository
 
-[http://github.com/jquelin/dist-zilla-pluginbundle-author-jquelin](http://github.com/jquelin/dist-zilla-pluginbundle-author-jquelin)
+    [http://github.com/jquelin/dist-zilla-pluginbundle-author-jquelin](http://github.com/jquelin/dist-zilla-pluginbundle-author-jquelin)
 
 - AnnoCPAN: Annotated CPAN documentation
 
-[http://annocpan.org/dist/Dist-Zilla-PluginBundle-Author-JQUELIN](http://annocpan.org/dist/Dist-Zilla-PluginBundle-Author-JQUELIN)
+    [http://annocpan.org/dist/Dist-Zilla-PluginBundle-Author-JQUELIN](http://annocpan.org/dist/Dist-Zilla-PluginBundle-Author-JQUELIN)
 
 - CPAN Ratings
 
-[http://cpanratings.perl.org/d/Dist-Zilla-PluginBundle-Author-JQUELIN](http://cpanratings.perl.org/d/Dist-Zilla-PluginBundle-Author-JQUELIN)
+    [http://cpanratings.perl.org/d/Dist-Zilla-PluginBundle-Author-JQUELIN](http://cpanratings.perl.org/d/Dist-Zilla-PluginBundle-Author-JQUELIN)
 
-See also: [Dist::Zilla::PluginBundle](http://search.cpan.org/perldoc?Dist::Zilla::PluginBundle).
+See also: [Dist::Zilla::PluginBundle](https://metacpan.org/pod/Dist::Zilla::PluginBundle).
 
 # AUTHOR
 
