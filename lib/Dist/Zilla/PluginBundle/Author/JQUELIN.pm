@@ -132,7 +132,6 @@ sub bundle_config {
             ($plugin, $name, $arg) = @$wanted;
         }
         my $class = "Dist::Zilla::Plugin::$plugin";
-        Class::MOP::load_class($class); # make sure plugin exists
         push @plugins, [ "$section->{name}/$name" => $class => $arg ];
     }
 
