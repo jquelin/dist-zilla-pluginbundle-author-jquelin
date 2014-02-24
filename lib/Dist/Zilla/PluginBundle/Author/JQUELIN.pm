@@ -186,9 +186,9 @@ You can look for information on this module at:
 
 =over 4
 
-=item * Search CPAN
+=item * CPAN
 
-L<http://search.cpan.org/dist/Dist-Zilla-PluginBundle-Author-JQUELIN>
+L<http://metacpan.org/release/Dist-Zilla-PluginBundle-Author-JQUELIN>
 
 =item * See open / report bugs
 
