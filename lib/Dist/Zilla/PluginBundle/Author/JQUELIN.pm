@@ -42,11 +42,11 @@ use Dist::Zilla::Plugin::PruneCruft;
 use Dist::Zilla::Plugin::PruneFiles;
 use Dist::Zilla::Plugin::Readme;
 use Dist::Zilla::Plugin::ReadmeMarkdownFromPod;
-use Dist::Zilla::Plugin::ReportVersions::Tiny;
 use Dist::Zilla::Plugin::Repository;
 use Dist::Zilla::Plugin::ShareDir;
 use Dist::Zilla::Plugin::TaskWeaver;
 use Dist::Zilla::Plugin::Test::Compile 1.100220;
+use Dist::Zilla::Plugin::Test::ReportPrereqs;
 use Dist::Zilla::Plugin::TestRelease;
 use Dist::Zilla::Plugin::UploadToCPAN;
 
@@ -69,11 +69,11 @@ sub bundle_config {
         [ 'Git::NextVersion' => {} ],
 
         # -- fetch & generate files
-        [ GatherDir              => {} ],
-        [ 'Test::Compile'        => {} ],
-        [ PodCoverageTests       => {} ],
-        [ PodSyntaxTests         => {} ],
-        [ 'ReportVersions::Tiny' => {} ],
+        [ GatherDir             => {} ],
+        [ 'Test::Compile'       => {} ],
+        [ PodCoverageTests      => {} ],
+        [ PodSyntaxTests        => {} ],
+        [ 'Test::ReportPrereqs' => {} ],
 
         # -- remove some files
         [ PruneCruft   => {} ],
