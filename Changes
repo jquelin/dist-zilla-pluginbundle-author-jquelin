@@ -1,6 +1,8 @@
 Changelog for Dist-Zilla-PluginBundle-JQUELIN
 
 {{$NEXT}}
+
+3.004     2015-11-23 14:33:23+01:00 Europe/Paris
  - replace ReportVersion::Tiny by Test::ReportPrereqs
 
 3.003     2014-02-24 15:25:25+01:00 Europe/Paris

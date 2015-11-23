@@ -4,7 +4,7 @@ Dist::Zilla::PluginBundle::Author::JQUELIN - Build & release a distribution like
 
 # VERSION
 
-version 3.003
+version 3.004
 
 # SYNOPSIS
 
@@ -23,7 +23,7 @@ The following options are accepted:
 respectively either [PodWeaver](https://metacpan.org/pod/Dist::Zilla::Plugin::PodWeaver) or
 [TaskWeaver](https://metacpan.org/pod/Dist::Zilla::Plugin::TaskWeaver).
 
-__NOTE:__ This bundle consumes
+**NOTE:** This bundle consumes
 [Dist::Zilla::Role::PluginBundle::Config::Slicer](https://metacpan.org/pod/Dist::Zilla::Role::PluginBundle::Config::Slicer) so you can also
 specify attributes for any of the bundled plugins. The option should be
 the plugin name and the attribute separated by a dot:
